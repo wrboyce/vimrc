@@ -50,6 +50,9 @@ endif
 " Shows the current command being typed
 set showcmd
 
+" hide buffers, don't close them
+set hidden
+
 " Show matching brackets/braces
 set showmatch
 
@@ -69,11 +72,14 @@ set smartindent
 
 " Expand tabs to spaces
 set expandtab
-set smarttab
 
 " Reduce the size of tabs
 set shiftwidth=4
 set softtabstop=4
+set shiftround
+
+" obey sw when inserting tabs
+set smarttab
 
 " Use english for spellchecking, but don't spellcheck by default
 if version >= 700
@@ -113,8 +119,8 @@ set incsearch
 set hlsearch
 
 " Backup to a central dir, to avoid clutter in workspace dirs
-set backup
-set backupdir=~/.vim/backup
+set nobackup "" disable backups.
+"set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
 " ???
@@ -167,6 +173,9 @@ imap ii <Esc>
 
 " '-' to disable highlighting for current search
 map - :nohls<CR>
+
+" sudo save
+cmap w!! w !sudo tee % >/dev/null
 
 " Next Tab
 nnoremap <silent> <C-Right> :tabnext<CR>
