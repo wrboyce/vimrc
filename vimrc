@@ -182,6 +182,13 @@ nnoremap <silent> <C-t> :tabnew<CR>
 
 " {{{ Plugin Settings
 
+"  {{{ pathogen.vim
+
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+"  }}}
+
 "  {{{ codepad.vim
 
 " map <D-r> to CPRun
