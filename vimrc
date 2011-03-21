@@ -159,7 +159,7 @@ endif
 " Status Line
 set laststatus=2
 set statusline=%n:%F%y%m%r%h%w\ [%{&ff}%(,%{&fenc}%)]\ [%c][%l/%L][%p%%]
-set statusline+=%(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
+set statusline+=%{fugitive#statusline()}\ %(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
 " Remove italics from the gui statusline
 highlight statusline gui=none
 
