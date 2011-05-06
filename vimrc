@@ -190,6 +190,17 @@ nnoremap <silent> <M-b> :make<CR>
 " }}}
 
 
+" {{{ Language Specifics
+
+"  {{{ Haskell
+
+au BufEnter *.hs compiler ghc
+
+"  }}}
+
+" }}}
+
+
 " {{{ Plugin Settings
 
 "  {{{ pathogen.vim
@@ -246,6 +257,13 @@ let g:syntastic_enable_signs=1
 " enable automatic errors window
 let g:syntastic_auto_loc_list=1
 
+"  }}}
+
+"  {{{ haskellmode_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
+let g:haddock_docdir = "/usr/local/share/doc/ghc/html"
+let g:haddock_indexfiledir = "~/.vim/tmp/"
 "  }}}
 
 " }}}
