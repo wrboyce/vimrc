@@ -179,12 +179,13 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Next Tab
 nnoremap <silent> <C-Right> :tabnext<CR>
-
 " Previous Tab
 nnoremap <silent> <C-Left> :tabprevious<CR>
-
 " New Tab
 nnoremap <silent> <C-t> :tabnew<CR>
+
+" Cmd + B -> make
+nnoremap <silent> <M-b> :make<CR>
 
 " }}}
 
