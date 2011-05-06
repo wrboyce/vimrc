@@ -137,11 +137,16 @@ let python_highlight_all = 1
 
 " {{{ Look and Feel
 
+" 256 Colours!
+set t_Co=256
+
 " Always a dark background!
 set background=dark
 
 " Colour scheme
 colorscheme ir_black
+" ...with custom `Conceal` scheme
+hi! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 
 " Keep at least 5 lines above/below
 set scrolloff=5
