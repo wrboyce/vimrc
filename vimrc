@@ -229,6 +229,21 @@ noremap <silent> <D-r><CR> :CPRun<CR>
 
 "  }}}
 
+"  {{{ fugitive.vim
+
+" map cmd-g,s to :Gstatus
+noremap <D-g>s :Gstatus<CR>
+" map cmd-g,c to :Gcommit
+noremap <D-g>c :Gcommit<CR>
+" map cmd-g,l to :Glog
+noremap <D-g>l :Glog<CR>
+" map cmd-g,w to :Gbrowse (web)
+noremap <D-g>w :Gbrowse<CR>
+" map cmd-g<cr> to :Git...
+noremap <D-g><CR> :Git
+
+"  }}}
+
 "  {{{ taglist.vim
 
 " map <D-e> to TlistToggle
