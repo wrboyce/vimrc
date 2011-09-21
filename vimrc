@@ -204,6 +204,12 @@ au BufEnter *.hs compiler ghc
 
 "  }}}
 
+"  {{{ Markdown
+
+au BufEnter *.md map <silent> <D-r> :silent !open -a Marked %<CR>
+
+"  }}}
+
 " }}}
 
 
