@@ -260,10 +260,17 @@ let Tlist_Inc_Winwidth=0
 
 "  }}}
 
+"  {{{ FuzzyFinder.vim
+
+" map <D-d> to fuzzy file finder
+noremap <silent> <D-d> :FufFile<CR>
+
+"  }}}
+
 "  {{{ nerdtree.vim
 
 " map <D-d> to NERDTreeToggle
-noremap <silent> <D-d> :NERDTreeToggle<CR>
+" noremap <silent> <D-d> :NERDTreeToggle<CR>
 
 "  }}}
 
