@@ -145,7 +145,7 @@ set t_Co=256
 set background=dark
 
 " Colour scheme
-colorscheme ir_black
+colorscheme solarized
 " ...with custom `Conceal` scheme
 hi! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 
