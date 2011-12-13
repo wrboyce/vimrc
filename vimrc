@@ -1,3 +1,10 @@
+"  {{{ pathogen.vim
+
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+"  }}}
+
 " {{{ Auto Commands
 
 " Remove any trailing whitespace
@@ -214,13 +221,6 @@ au BufEnter *.md map <silent> <D-r> :silent !open -a Marked %<CR>
 
 
 " {{{ Plugin Settings
-
-"  {{{ pathogen.vim
-
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
-"  }}}
 
 "  {{{ codepad.vim
 
