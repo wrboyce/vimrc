@@ -137,6 +137,16 @@ set ttyfast
 " bash shell
 set shell=bash
 
+" Handle Unicode properly
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    set fileencodings=utf-8
+endif
+
 " turn on python highlighted numbers, builtins, exceptions, and space errors
 let python_highlight_all = 1
 
