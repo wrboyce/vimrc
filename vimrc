@@ -134,8 +134,8 @@ set directory=~/.vim/tmp
 " ???
 set ttyfast
 
-" bash shell
-set shell=bash
+" zsh shell
+set shell=zsh
 
 " Handle Unicode properly
 if has("multi_byte")
