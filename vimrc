@@ -47,6 +47,9 @@ set nocompatible
 " Watch for file changes
 set autoread
 
+" Store a reasonable sized history
+set history=1000
+
 " Automatically cd into the directory that the file is in
 if exists('+autochdir')
     set autochdir
