@@ -312,6 +312,13 @@ let g:pydoc_highlight = 0
 let g:syntastic_enable_signs=1
 " enable automatic errors window
 let g:syntastic_auto_loc_list=1
+" 'sexy' unicode signs
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='S'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='s'
+
+"  }}}
 
 "  }}}
 
