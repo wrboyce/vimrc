@@ -274,6 +274,9 @@ let g:SuperTabDefaultCompletionType='context'
 
 "  }}}
 
+"  {{{ SnipMate
+
+let g:snipMateAllowMatchingDot=0
 
 "  }}}
 
