@@ -198,8 +198,9 @@ endif
 
 " Status Line
 set laststatus=2
-set statusline=%n:%F%y%m%r%h%w\ [%{&ff}%(,%{&fenc}%)]\ [%c][%l/%L][%p%%]
-set statusline+=%{fugitive#statusline()}\ %(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
+" superceded by Powerline
+" set statusline=%n:%F%y%m%r%h%w\ [%{&ff}%(,%{&fenc}%)]\ [%c][%l/%L][%p%%]
+" set statusline+=%{fugitive#statusline()}\ %(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
 " Remove italics from the gui statusline
 highlight statusline gui=none
 
@@ -249,7 +250,13 @@ au BufEnter *.md map <silent> <D-r> :silent !open -a Marked %<CR>
 
 " {{{ Plugin Settings
 
-"  {{{ codepad.vim
+"  {{{ powerline
+"
+set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
+set noshowmode
+set guifont=Monaco\ for\ Powerline:h10
+
+"  }}}
 
 " map <D-r> to CPRun
 noremap <silent> <D-r><CR> :CPRun<CR>
