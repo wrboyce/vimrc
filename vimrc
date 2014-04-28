@@ -187,7 +187,12 @@ if has("gui_running")
     set guioptions-=T
     " fill screen!
     set lines=40 columns=130
-    " remove italics from the statusbar
+    " Use system clipboard
+    if has('x')
+        set clipboard=unnamedplus
+    else
+        set clipboard=unnamed
+    endif
 endif
 "  }}}
 
