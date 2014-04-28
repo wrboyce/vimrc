@@ -167,13 +167,19 @@ set t_Co=256
 " Always a dark background!
 set background=dark
 
-" Colour scheme
+" Solarized (dark) colour scheme
 colorscheme solarized
-" ...with custom `Conceal` scheme
-hi! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
+highlight clear SignColumn
+highlight! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 
 " Keep at least 5 lines above/below
 set scrolloff=5
+
+" highlight the current line
+set cursorline
+
+" allow windows to have a 0 line height
+set winminheight=0
 
 "  {{{ GUI Settings
 if has("gui_running")
