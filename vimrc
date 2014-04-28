@@ -320,6 +320,10 @@ let g:syntastic_style_warning_symbol='s'
 
 "  }}}
 
+"  {{{ ctrlp.vim
+
+noremap <leader>p :CtrlPMixed<CR>
+
 "  }}}
 
 "  {{{ haskellmode_doc.vim
