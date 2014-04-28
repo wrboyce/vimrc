@@ -268,6 +268,12 @@ let g:jedi#show_function_definition=0
 
 "  }}}
 
+"  {{{ SuperTab
+
+let g:SuperTabDefaultCompletionType='context'
+
+"  }}}
+
 
 "  }}}
 
