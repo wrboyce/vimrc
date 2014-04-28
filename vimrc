@@ -5,6 +5,7 @@ call pathogen#helptags()
 
 "  }}}
 
+
 " {{{ Auto Commands
 
 " Remove any trailing whitespace
@@ -89,7 +90,7 @@ set tabstop=4
 set softtabstop=4
 set shiftround
 
-" obey sw when inserting tabs
+" obey shiftwidth when inserting tabs
 set smarttab
 
 " Use english for spellchecking, but don't spellcheck by default
@@ -136,7 +137,7 @@ set nobackup "" disable backups.
 "set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
-" ???
+" Modern terminal :)
 set ttyfast
 
 " zsh shell
@@ -152,9 +153,6 @@ if has("multi_byte")
     set fileencodings=utf-8
     scriptencoding utf-8
 endif
-
-" turn on python highlighted numbers, builtins, exceptions, and space errors
-let python_highlight_all = 1
 
 " }}}
 
@@ -209,29 +207,46 @@ highlight statusline gui=none
 
 " {{{ Mappings
 
-" 'ii' to exit insert mode
+" Fix home and end keybindings for screen
+map [F $
+imap [F $
+map [H g0
+imap [H g0
+
+" 'ii' to exit insert mode - only annoying when typing 'ascii' ;-)
 imap ii <Esc>
 
-" '-' to disable highlighting for current search
+" '-' to clear highlighting for current search
 map - :nohls<CR>
 
 " sudo save
 cmap w!! w !sudo tee % >/dev/null
 
 " Next Tab
-nnoremap <silent> <C-Right> :tabnext<CR>
+nnoremap <silent> <C-l> :tabnext<CR>
 " Previous Tab
-nnoremap <silent> <C-Left> :tabprevious<CR>
+nnoremap <silent> <C-h> :tabprevious<CR>
 " New Tab
 nnoremap <silent> <C-t> :tabnew<CR>
 
-" Cmd + B -> make
-nnoremap <silent> <M-b> :make<CR>
+" Ctrl + B -> make
+nnoremap <silent> <C-b> :make<CR>
+
+" TODO: navigate windows with ctrl-motion
 
 " }}}
 
 
 " {{{ Language Specifics
+
+"  {{{ Python
+"
+" turn on python highlighted numbers, builtins, exceptions, and space errors
+let python_highlight_all = 1
+" Allow lines longer than 80 chars
+let g:syntastic_python_flake8_args='--ignore=E128,E501'
+
+"  }}}
 
 "  {{{ Haskell
 
@@ -241,7 +256,7 @@ au BufEnter *.hs compiler ghc
 
 "  {{{ Markdown
 
-au BufEnter *.md map <silent> <D-r> :silent !open -a Marked %<CR>
+au BufEnter *.md map <silent> <C-b> :silent !open -a Marked %<CR>
 
 "  }}}
 
@@ -258,8 +273,6 @@ set guifont=Monaco\ for\ Powerline:h10
 
 "  }}}
 
-" map <D-r> to CPRun
-noremap <silent> <D-r><CR> :CPRun<CR>
 "  {{{ Jedi
 
 let g:jedi#use_tabs_not_buffers=0
