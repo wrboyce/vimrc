@@ -112,6 +112,8 @@ set wildmode=list:longest,full
 
 " Enable mouse support in console
 set mouse=a
+" Automatically hide the cursor when typing
+set mousehide
 
 " Fix backspace
 set backspace=2
