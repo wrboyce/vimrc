@@ -292,16 +292,6 @@ noremap <silent> <D-d> :FufFile<CR>
 "  {{{ nerdtree.vim
 
 " map <D-d> to NERDTreeToggle
-
-"  }}}
-
-"  {{{ pydoc.vim
-
-" map <D-/> to lookup current word
-map  <D-/> :call ShowPyDoc('<C-R><C-W>', 1)<CR>
-" disable highlighting of the term I looked up
-" TODO: Perhaps I should underline it, or something similar
-let g:pydoc_highlight = 0
 noremap <silent> <C-d> :NERDTreeToggle<CR>
 
 "  }}}
