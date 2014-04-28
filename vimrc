@@ -260,18 +260,34 @@ noremap <silent> <D-r><CR> :CPRun<CR>
 
 "  {{{ fugitive.vim
 
-" map cmd-g,s to :Gstatus
-noremap <D-g>s :Gstatus<CR>
-" map cmd-g,c to :Gcommit
-noremap <D-g>c :Gcommit<CR>
-" map cmd-g,l to :Glog
-noremap <D-g>l :Glog<CR>
-" map cmd-g,w to :Gbrowse (web)
-noremap <D-g>w :Gbrowse<CR>
-" map cmd-g<cr> to :Git...
-noremap <D-g><CR> :Git
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gc :Gcommit<CR>
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gl :Glog<CR>
+noremap <leader>ge :Gedit<CR>
+noremap <leader>gw :Gwrite<CR>
+noremap <leader>go :Gbrowse<CR>
+noremap <leader>g<Space> :Git
 
 "  }}}
+
+
+"  {{{ gist-vim
+
+let g:gist_clip_command='pbcopy'
+let g:gist_detect_filetype=1
+let g:gist_show_privates=1
+let g:gist_post_private=1
+let g:gist_get_multiplefile = 1
+noremap <leader>gg :Gist<CR>
+noremap <leader>gG :Gist -P<CR>
+noremap <leader>g!g :Gist -m<CR>
+noremap <leader>g?g :Gist -a<CR>
+
+
+"  }}}
+
 
 "  {{{ taglist.vim
 
