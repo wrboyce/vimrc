@@ -280,7 +280,6 @@ let g:snipMateAllowMatchingDot=0
 
 "  }}}
 
-"  {{{ pastie.vim
 "  {{{ NERDTree
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
@@ -291,8 +290,6 @@ noremap <silent> <leader>e :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
 
-" map <D-p> to :%Pastie
-" nomap <silent> <D-p> :%Pastie<CR>
 
 "  }}}
 
