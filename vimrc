@@ -260,6 +260,14 @@ set guifont=Monaco\ for\ Powerline:h10
 
 " map <D-r> to CPRun
 noremap <silent> <D-r><CR> :CPRun<CR>
+"  {{{ Jedi
+
+let g:jedi#use_tabs_not_buffers=0
+let g:jedi#popup_on_dot=0
+let g:jedi#show_function_definition=0
+
+"  }}}
+
 
 "  }}}
 
