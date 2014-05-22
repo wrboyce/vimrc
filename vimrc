@@ -8,34 +8,17 @@ call pathogen#helptags()
 
 " {{{ Auto Commands
 
-" Remove any trailing whitespace
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" Have viminfo remember a bunch of stuff
+set viminfo=!,'100,<100,f100,h,s10,n~/.viminfo
 
-" Restore cursor position to where it was before
-augroup JumpCursorOnEdit
-   au!
-   autocmd BufReadPost *
-            \ if expand("<afile>:p:h") !=? $TEMP |
-            \   if line("'\"") > 1 && line("'\"") <= line("$") |
-            \     let JumpCursorOnEdit_foo = line("'\"") |
-            \     let b:doopenfold = 1 |
-            \     if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-            \        let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-            \        let b:doopenfold = 2 |
-            \     endif |
-            \     exe JumpCursorOnEdit_foo |
-            \   endif |
-            \ endif
-   " Need to postpone using "zv" until after reading the modelines.
-   autocmd BufWinEnter *
-            \ if exists("b:doopenfold") |
-            \   exe "normal zv" |
-            \   if(b:doopenfold > 1) |
-            \       exe  "+".1 |
-            \   endif |
-            \   unlet b:doopenfold |
-            \ endif
-augroup END
+" Restore cursor position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Remove any trailing whitespace
+autocmd BufWritePre * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" Automatically cd into the directory that the file is in
+set autochdir
 
 " }}}
 
@@ -44,22 +27,6 @@ augroup END
 
 " Disable vi compatability mode
 set nocompatible
-
-" Watch for file changes
-""set autoread
-
-" Store a reasonable sized history
-""set history=1000
-
-" Automatically cd into the directory that the file is in
-if exists('+autochdir')
-    set autochdir
-else
-    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
-
-" Shows the current command being typed
-""set showcmd
 
 " hide buffers, don't close them
 set hidden
@@ -70,15 +37,10 @@ set showmatch
 " Folding
 set foldmethod=marker
 
-" Syntax Highlighting
-""filetype on
-""filetype plugin on
-""filetype indent on
-""syntax enable
+" use `grep -nH` for grepping
 set grepprg=grep\ -nH\ $*
 
-" Autoident code
-""set autoindent
+" Auto(smart)ident code
 set smartindent
 
 " Expand tabs to spaces
@@ -88,10 +50,6 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-""set shiftround
-
-" obey shiftwidth when inserting tabs
-""set smarttab
 
 " Use english for spellchecking, but don't spellcheck by default
 if version >= 700
@@ -107,8 +65,7 @@ set shortmess+=r
 " set title for xterm etc
 set title
 
-" Wild Mode!
-""set wildmenu
+" Show wildcard matches as a list, longest common string
 set wildmode=list:longest,full
 
 " Enable mouse support in console
@@ -116,26 +73,19 @@ set mouse=a
 " Automatically hide the cursor when typing
 set mousehide
 
-" Fix backspace
-""?set backspace=2
-
 " Show line numbers
 set number
 
 " make searches case-insensitive, unless they contain upper-case letters:
 set ignorecase
 set smartcase
-
-" Incremental searching
-""set incsearch
-
 " Highlight search matches
 set hlsearch
 
 " Backup to a central dir, to avoid clutter in workspace dirs
+set directory=~/.vim/tmp
 set nobackup "" disable backups.
 "set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
 
 " Modern terminal :)
 set ttyfast
@@ -152,17 +102,17 @@ set shell=zsh
 ""    setglobal fileencoding=utf-8
 ""    set fileencodings=utf-8
 ""    scriptencoding utf-8
-endif
+""endif
 
 " }}}
 
 
 " {{{ Look and Feel
 
-" 256 Colours!
-""set t_Co=256
+" 256 Colours
+set t_Co=256
 
-" Always a dark background!
+" Always a dark background
 set background=dark
 
 " Solarized (dark) colour scheme
@@ -195,12 +145,6 @@ if has("gui_running")
 endif
 "  }}}
 
-" Status Line
-""set laststatus=2
-" superceded by Powerline
-" set statusline=%n:%F%y%m%r%h%w\ [%{&ff}%(,%{&fenc}%)]\ [%c][%l/%L][%p%%]
-" set statusline+=%{fugitive#statusline()}\ %(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
-" Remove italics from the gui statusline
 highlight statusline gui=none
 
 " }}}
@@ -213,9 +157,6 @@ map [F $
 imap [F $
 map [H g0
 imap [H g0
-
-" 'ii' to exit insert mode - only annoying when typing 'ascii' ;-)
-imap ii <Esc>
 
 " '-' to clear highlighting for current search
 map - :nohls<CR>
@@ -233,8 +174,6 @@ nnoremap <silent> <C-t> :tabnew<CR>
 " Ctrl + B -> make
 nnoremap <silent> <C-b> :make<CR>
 
-" TODO: navigate windows with ctrl-motion
-
 " }}}
 
 
@@ -242,8 +181,6 @@ nnoremap <silent> <C-b> :make<CR>
 
 "  {{{ Python
 "
-" turn on python highlighted numbers, builtins, exceptions, and space errors
-let python_highlight_all = 1
 " Allow lines longer than 80 chars
 let g:syntastic_python_flake8_args='--ignore=E128,E501'
 
@@ -278,7 +215,6 @@ set guifont=Monaco\ for\ Powerline:h10
 
 let g:jedi#use_tabs_not_buffers=0
 let g:jedi#popup_on_dot=0
-let g:jedi#show_function_definition=0
 
 "  }}}
 
@@ -299,11 +235,23 @@ let g:snipMateAllowMatchingDot=0
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 noremap <silent> <leader>e :NERDTreeTabsToggle<CR>
 
-
 " nerdtree-tabs
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
 
+
+"  }}}
+
+"  {{{ nerdtree.vim
+
+" map <C-d> to NERDTreeToggle
+noremap <silent> <C-d> :NERDTreeToggle<CR>
+
+"  }}}
+
+"  {{{ ctrlp.vim
+
+noremap <leader>p :CtrlPMixed<CR>
 
 "  }}}
 
@@ -321,7 +269,6 @@ noremap <leader>g<Space> :Git
 
 "  }}}
 
-
 "  {{{ gist-vim
 
 let g:gist_clip_command='pbcopy'
@@ -337,30 +284,6 @@ noremap <leader>g?g :Gist -a<CR>
 
 "  }}}
 
-
-"  {{{ taglist.vim
-
-" map <D-e> to TlistToggle
-noremap <silent> <D-e> :TlistToggle<CR>
-" do not increase the size of my window
-let Tlist_Inc_Winwidth=0
-
-"  }}}
-
-"  {{{ FuzzyFinder.vim
-
-" map <D-d> to fuzzy file finder
-noremap <silent> <D-d> :FufFile<CR>
-
-"  }}}
-
-"  {{{ nerdtree.vim
-
-" map <D-d> to NERDTreeToggle
-noremap <silent> <C-d> :NERDTreeToggle<CR>
-
-"  }}}
-
 "  {{{ syntastic.vim
 
 " enable marking errors in the gutter
@@ -372,12 +295,6 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol='S'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='s'
-
-"  }}}
-
-"  {{{ ctrlp.vim
-
-noremap <leader>p :CtrlPMixed<CR>
 
 "  }}}
 
