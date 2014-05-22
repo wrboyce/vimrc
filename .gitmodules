@@ -73,3 +73,6 @@
 [submodule "bundle/sensible"]
 	path = bundle/sensible
 	url = http://github.com/tpope/vim-sensible.git
+[submodule "bundle/virtualenv"]
+	path = bundle/virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv.git
