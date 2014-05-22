@@ -46,10 +46,10 @@ augroup END
 set nocompatible
 
 " Watch for file changes
-set autoread
+""set autoread
 
 " Store a reasonable sized history
-set history=1000
+""set history=1000
 
 " Automatically cd into the directory that the file is in
 if exists('+autochdir')
@@ -59,7 +59,7 @@ else
 endif
 
 " Shows the current command being typed
-set showcmd
+""set showcmd
 
 " hide buffers, don't close them
 set hidden
@@ -71,14 +71,14 @@ set showmatch
 set foldmethod=marker
 
 " Syntax Highlighting
-filetype on
-filetype plugin on
-filetype indent on
-syntax enable
+""filetype on
+""filetype plugin on
+""filetype indent on
+""syntax enable
 set grepprg=grep\ -nH\ $*
 
 " Autoident code
-set autoindent
+""set autoindent
 set smartindent
 
 " Expand tabs to spaces
@@ -88,10 +88,10 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set shiftround
+""set shiftround
 
 " obey shiftwidth when inserting tabs
-set smarttab
+""set smarttab
 
 " Use english for spellchecking, but don't spellcheck by default
 if version >= 700
@@ -108,7 +108,7 @@ set shortmess+=r
 set title
 
 " Wild Mode!
-set wildmenu
+""set wildmenu
 set wildmode=list:longest,full
 
 " Enable mouse support in console
@@ -117,7 +117,7 @@ set mouse=a
 set mousehide
 
 " Fix backspace
-set backspace=2
+""?set backspace=2
 
 " Show line numbers
 set number
@@ -127,7 +127,7 @@ set ignorecase
 set smartcase
 
 " Incremental searching
-set incsearch
+""set incsearch
 
 " Highlight search matches
 set hlsearch
@@ -144,14 +144,14 @@ set ttyfast
 set shell=zsh
 
 " Handle Unicode properly
-if has("multi_byte")
-    if &termencoding == ""
-        let &termencoding = &encoding
-    endif
-    set encoding=utf-8
-    setglobal fileencoding=utf-8
-    set fileencodings=utf-8
-    scriptencoding utf-8
+""if has("multi_byte")
+""    if &termencoding == ""
+""        let &termencoding = &encoding
+""    endif
+""    set encoding=utf-8
+""    setglobal fileencoding=utf-8
+""    set fileencodings=utf-8
+""    scriptencoding utf-8
 endif
 
 " }}}
@@ -160,7 +160,7 @@ endif
 " {{{ Look and Feel
 
 " 256 Colours!
-set t_Co=256
+""set t_Co=256
 
 " Always a dark background!
 set background=dark
@@ -170,8 +170,9 @@ colorscheme solarized
 highlight clear SignColumn
 highlight! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 
-" Keep at least 5 lines above/below
+" Keep at least 5 lines spacing
 set scrolloff=5
+set sidescrolloff=5
 
 " highlight the current line
 set cursorline
@@ -195,7 +196,7 @@ endif
 "  }}}
 
 " Status Line
-set laststatus=2
+""set laststatus=2
 " superceded by Powerline
 " set statusline=%n:%F%y%m%r%h%w\ [%{&ff}%(,%{&fenc}%)]\ [%c][%l/%L][%p%%]
 " set statusline+=%{fugitive#statusline()}\ %(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%)
