@@ -311,4 +311,9 @@ let g:haddock_indexfiledir = "~/.vim/tmp/"
 "  {{{ numbers.vim
 nnoremap <leader>n :NumbersToggle<CR>
 "  }}}
+
+"  {{{ UndoTree
+nnoremap <leader>u :UndotreeToggle<CR>
+"  }}}
+
 " }}}
