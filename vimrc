@@ -308,4 +308,7 @@ let g:haddock_docdir = "/usr/local/share/doc/ghc/html"
 let g:haddock_indexfiledir = "~/.vim/tmp/"
 "  }}}
 
+"  {{{ numbers.vim
+nnoremap <leader>n :NumbersToggle<CR>
+"  }}}
 " }}}
