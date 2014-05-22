@@ -281,6 +281,16 @@ noremap <leader>gG :Gist -P<CR>
 noremap <leader>g!g :Gist -m<CR>
 noremap <leader>g?g :Gist -a<CR>
 
+"  }}}
+
+"  {{{ gitgutter
+
+noremap <leader>gt :GitGutterSignsToggle<CR>
+noremap <leader>gD :GitGutterLineHighlightsToggle<CR>
+highlight link GitGutterAdd GitGutterAddLine
+highlight link GitGutterChange GitGutterChangeLine
+highlight link GitGutterDelete GitGutterDeleteLine
+highlight link GitGutterChangeDelete GitGutterChangeDeleteLine
 
 "  }}}
 
