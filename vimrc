@@ -242,13 +242,6 @@ let g:nerdtree_tabs_open_on_new_tab=0
 
 "  }}}
 
-"  {{{ nerdtree.vim
-
-" map <C-d> to NERDTreeToggle
-noremap <silent> <C-d> :NERDTreeToggle<CR>
-
-"  }}}
-
 "  {{{ ctrlp.vim
 
 noremap <leader>p :CtrlPMixed<CR>
