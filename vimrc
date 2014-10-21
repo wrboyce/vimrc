@@ -182,7 +182,7 @@ nnoremap <silent> <C-b> :make<CR>
 "  {{{ Python
 "
 " Allow lines longer than 80 chars
-let g:syntastic_python_flake8_args='--ignore=E128,E501'
+let g:syntastic_python_flake8_args='--ignore=E128,E501,E265'
 
 "  }}}
 
