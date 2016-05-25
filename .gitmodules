@@ -91,12 +91,6 @@
 [submodule "bundle/applescript"]
 	path = bundle/applescript
 	url = https://github.com/vim-scripts/applescript.vim
-[submodule "bundle/dustjs"]
-	path = bundle/dustjs
-	url = https://github.com/jimmyhchan/dustjs.vim.git
-[submodule "bundle/coffeescript"]
-	path = bundle/coffeescript
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
