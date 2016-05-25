@@ -104,6 +104,9 @@ set shell=zsh
 ""    scriptencoding utf-8
 ""endif
 
+" enable modelines
+set modelines=5
+
 " }}}
 
 
