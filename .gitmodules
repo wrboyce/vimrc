@@ -112,3 +112,6 @@
 [submodule "bundle/rhubarb"]
 	path = bundle/rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "bundle/typescript"]
+	path = bundle/typescript
+	url = https://github.com/leafgarland/typescript-vim.git
