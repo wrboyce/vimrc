@@ -122,6 +122,8 @@ set background=dark
 colorscheme solarized
 highlight clear SignColumn
 highlight! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
+" highlight cols 80,100 and 120+
+let &colorcolumn="80,100,".join(range(120,999),",")
 
 " Keep at least 5 lines spacing
 set scrolloff=5
