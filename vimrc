@@ -84,8 +84,7 @@ set hlsearch
 
 " Backup to a central dir, to avoid clutter in workspace dirs
 set directory=~/.vim/tmp
-set nobackup "" disable backups.
-"set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup
 
 " Modern terminal :)
 set ttyfast
