@@ -183,13 +183,6 @@ nnoremap <silent> <C-b> :make<CR>
 
 " {{{ Language Specifics
 
-"  {{{ Python
-"
-" Allow lines longer than 80 chars
-let g:syntastic_python_flake8_args='--ignore=E128,E501,E265,E731'
-
-"  }}}
-
 "  {{{ Haskell
 
 au BufEnter *.hs compiler ghc
@@ -276,20 +269,6 @@ highlight link GitGutterAdd GitGutterAddLine
 highlight link GitGutterChange GitGutterChangeLine
 highlight link GitGutterDelete GitGutterDeleteLine
 highlight link GitGutterChangeDelete GitGutterChangeDeleteLine
-
-"  }}}
-
-"  {{{ syntastic.vim
-
-" enable marking errors in the gutter
-let g:syntastic_enable_signs=1
-" enable automatic errors window
-let g:syntastic_auto_loc_list=1
-" 'sexy' unicode signs
-let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol='S'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='s'
 
 "  }}}
 
