@@ -205,6 +205,11 @@ let g:ale_open_list=1
 
 "  }}}
 
+"  {{{ tsuquyomi
+
+let g:tsuquyomi_disable_quickfix = 1
+
+"  }}}
 
 "  {{{ Jedi
 
