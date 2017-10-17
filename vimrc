@@ -79,6 +79,12 @@ set smartcase
 " Highlight search matches
 set hlsearch
 
+" persistent undo
+set undofile
+set undodir=~/.vim/.undo
+set undolevels=1000
+set undoreload=10000
+
 " Backup to a central dir, to avoid clutter in workspace dirs
 set directory=~/.vim/.tmp
 set backupdir=~/.vim/.backup
