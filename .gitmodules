@@ -10,9 +10,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/golang"]
-	path = bundle/golang
-	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
@@ -55,9 +52,6 @@
 [submodule "bundle/sensible"]
 	path = bundle/sensible
 	url = http://github.com/tpope/vim-sensible.git
-[submodule "bundle/virtualenv"]
-	path = bundle/virtualenv
-	url = https://github.com/jmcantrell/vim-virtualenv.git
 [submodule "bundle/sleuth"]
 	path = bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
@@ -76,9 +70,6 @@
 [submodule "bundle/applescript"]
 	path = bundle/applescript
 	url = https://github.com/vim-scripts/applescript.vim
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim.git
 [submodule "bundle/vinegar"]
 	path = bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
