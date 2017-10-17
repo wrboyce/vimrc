@@ -120,6 +120,11 @@ set background=dark
 
 " Solarized (dark) colour scheme
 colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 highlight clear SignColumn
 highlight! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 " highlight cols 80,100 and 120+
