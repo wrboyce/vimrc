@@ -64,6 +64,8 @@ set title
 
 " Show wildcard matches as a list, longest common string
 set wildmode=list:longest,full
+" Ignore common files
+set wildignore+=*.pyc,.git,node_modules
 
 " Enable mouse support in console
 set mouse=a
