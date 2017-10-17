@@ -118,10 +118,11 @@ set t_Co=256
 set background=dark
 
 " Solarized (dark) colour scheme
-colorscheme solarized
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+    let base16colorspace=256
+    source ~/.vimrc_background
+else
+    colorscheme solarized
 endif
 
 highlight clear SignColumn
