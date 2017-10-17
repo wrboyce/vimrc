@@ -1,4 +1,4 @@
-backup/*
-tmp/*
-doc/tags
+.backup/*
+.tmp/*
 .netrwhist
+doc/tags

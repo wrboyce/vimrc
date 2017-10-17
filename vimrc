@@ -9,7 +9,7 @@ call pathogen#infect()
 " {{{ Auto Commands
 
 " Have viminfo remember a bunch of stuff
-set viminfo=!,'100,<100,f100,h,s10,n~/.viminfo
+set viminfo=!,'100,<100,f100,s10,n~/.viminfo
 
 " Restore cursor position
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -33,9 +33,6 @@ set hidden
 
 " Show matching brackets/braces
 set showmatch
-
-" Folding
-set foldmethod=marker
 
 " use `grep -nH` for grepping
 set grepprg=grep\ -nH\ $*
@@ -83,25 +80,14 @@ set smartcase
 set hlsearch
 
 " Backup to a central dir, to avoid clutter in workspace dirs
-set directory=~/.vim/tmp
-set backupdir=~/.vim/backup
+set directory=~/.vim/.tmp
+set backupdir=~/.vim/.backup
 
 " Modern terminal :)
 set ttyfast
 
 " zsh shell
 set shell=zsh
-
-" Handle Unicode properly
-""if has("multi_byte")
-""    if &termencoding == ""
-""        let &termencoding = &encoding
-""    endif
-""    set encoding=utf-8
-""    setglobal fileencoding=utf-8
-""    set fileencodings=utf-8
-""    scriptencoding utf-8
-""endif
 
 " enable modelines
 set modelines=5
@@ -164,17 +150,14 @@ highlight statusline gui=none
 
 " {{{ Mappings
 
-" Fix home and end keybindings for screen
-map [F $
-imap [F $
-map [H g0
-imap [H g0
-
 " '-' to clear highlighting for current search
 map - :nohls<CR>
 
 " sudo save
 cmap w!! w !sudo tee % >/dev/null
+
+" cd to files current directory
+nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 " Next Tab
 nnoremap <silent> <C-l> :tabnext<CR>
@@ -191,15 +174,9 @@ nnoremap <silent> <C-b> :make<CR>
 
 " {{{ Language Specifics
 
-"  {{{ Haskell
-
-au BufEnter *.hs compiler ghc
-
-"  }}}
-
 "  {{{ Markdown
 
-au BufEnter *.md map <silent> <C-b> :silent !open -a Marked %<CR>
+au BufEnter *.md map <silent> <C-b> :silent !open -a Marked\ 2 %<CR>
 
 "  }}}
 
@@ -215,6 +192,13 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts = 1
 
 "  }}}
+
+"  {{{ ALE
+
+let g:ale_open_list=1
+
+"  }}}
+
 
 "  {{{ Jedi
 
@@ -262,9 +246,13 @@ let g:gist_detect_filetype=1
 let g:gist_show_privates=1
 let g:gist_post_private=1
 let g:gist_get_multiplefile = 1
+" private gist
 noremap <leader>gg :Gist<CR>
+" public gist
 noremap <leader>gG :Gist -P<CR>
+" private gist from all open tabs
 noremap <leader>g!g :Gist -m<CR>
+" anonymous gist from current tab
 noremap <leader>g?g :Gist -a<CR>
 
 "  }}}
@@ -278,13 +266,6 @@ highlight link GitGutterChange GitGutterChangeLine
 highlight link GitGutterDelete GitGutterDeleteLine
 highlight link GitGutterChangeDelete GitGutterChangeDeleteLine
 
-"  }}}
-
-"  {{{ haskellmode_doc.vim
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
-let g:haddock_docdir = "/usr/local/share/doc/ghc/html"
-let g:haddock_indexfiledir = "~/.vim/tmp/"
 "  }}}
 
 "  {{{ numbers.vim
