@@ -2,11 +2,14 @@
 
 if [ -d ~/.vim ] || [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
     echo "Previous vim config found at ~/.vim/ or ~/.vimrc! Bailing..." >&2
-    exit
+    exit 1
 fi
 
 echo "Cloning repo..."
-/usr/bin/env git clone --recursive https://github.com/wrboyce/vimrc.git ~/.vim
+git clone --recursive https://github.com/wrboyce/vimrc.git ~/.vim
 
 echo "Installing config..."
 ln -s ~/.vim/vimrc ~/.vimrc
+
+echo "Done"
+exit 0
