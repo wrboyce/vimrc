@@ -152,6 +152,8 @@ if has("gui_running")
     else
         set clipboard=unnamed
     endif
+    " use powerline font
+    set guifont=Monaco\ for\ Powerline:h11
 endif
 "  }}}
 
@@ -206,11 +208,11 @@ au BufEnter *.md map <silent> <C-b> :silent !open -a Marked %<CR>
 
 " {{{ Plugin Settings
 
-"  {{{ powerline
-"
-set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
-set noshowmode
-set guifont=Monaco\ for\ Powerline:h10
+"  {{{ airline
+
+let g:airline_theme='base16_solarized'
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts = 1
 
 "  }}}
 

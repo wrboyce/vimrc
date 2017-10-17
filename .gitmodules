@@ -16,9 +16,6 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "bundle/powerline"]
-	path = bundle/powerline
-	url = https://github.com/Lokaltog/powerline.git
 [submodule "bundle/jedi"]
 	path = bundle/jedi
 	url = https://github.com/davidhalter/jedi-vim.git
@@ -121,3 +118,9 @@
 [submodule "bundle/base16"]
 	path = bundle/base16
 	url = https://github.com/chriskempson/base16-vim
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "bundle/airline-themes"]
+	path = bundle/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
