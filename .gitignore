@@ -1,5 +1,5 @@
-.backup/*
-.tmp/*
-.undo/*
-.netrwhist
-doc/tags
+.backup/
+.tmp/
+.undo/
+bundle/
+doc/
