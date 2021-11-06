@@ -5,7 +5,7 @@ Plug 'tpope/vim-sensible'
 
 " look & feel
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim' | Plug 'altercation/vim-colors-solarized'
+" Plug 'chriskempson/base16-vim' | Plug 'altercation/vim-colors-solarized'
 " Plug 'danielwe/base16-vim' | Plug 'altercation/vim-colors-solarized'
 
 " sidebars
@@ -31,33 +31,40 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wrboyce/cute.vim'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'jeetsukumaran/vim-markology'
 Plug 'farmergreg/vim-lastplace'
 Plug 'myusuf3/numbers.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-repeat'
-Plug 'jremmen/vim-ripgrep'
-Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-slash'
+" Plug 'jremmen/vim-ripgrep'
+" Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-slash'
 Plug 'tpope/vim-sleuth'
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 
 " async linting for all the languages
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " language specific plugins
-Plug 'ARM9/arm-syntax-vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'ARM9/arm-syntax-vim'
+" Plug 'sheerun/vim-polyglot'
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
-Plug 'Shougo/denite.nvim'
-Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-Plug 'zplugin/zplugin-vim-syntax'
+" Plug 'zplugin/zplugin-vim-syntax'
 
 call plug#end()

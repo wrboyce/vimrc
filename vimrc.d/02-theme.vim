@@ -9,14 +9,14 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
     let g:airline_theme = 'base16_solarized'
-else
-    colorscheme solarized
+" else
+"     colorscheme solarized
 endif
 
 highlight clear SignColumn
 highlight! Conceal ctermbg=NONE cterm=bold ctermfg=darkmagenta guibg=NONE gui=bold guifg=darkmagenta
 " highlight cols 80,100 and 120+
-let &colorcolumn="80,100,".join(range(120,999),",")
+" let &colorcolumn="80,100,".join(range(120,999),",")
 
 " keep at least 5 lines spacing
 set scrolloff=5
