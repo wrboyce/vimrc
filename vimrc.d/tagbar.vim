@@ -1,3 +1,5 @@
+map <C-t> :TagbarToggle<CR>
+
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
 let g:tagbar_show_visibility = 1

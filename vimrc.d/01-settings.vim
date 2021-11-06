@@ -26,7 +26,7 @@ set softtabstop=4
 " show wildcard matches as a list, longest common string
 set wildmode=list:longest,full
 " ignore common files
-set wildignore+=*.pyc,.git,node_modules
+set wildignore+=*.pyc,__pycache__,.git,node_modules,*.zwc
 
 " enable mouse support in console
 set mouse=a
@@ -45,3 +45,7 @@ set backupdir=~/.vim/.backup/
 
 " enable modelines
 set modelines=5
+
+" onlt splits below/to the right
+set splitbelow
+set splitright

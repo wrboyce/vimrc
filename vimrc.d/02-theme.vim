@@ -4,15 +4,11 @@ set t_Co=256
 " always a dark background
 set background=dark
 
-" airline
-let g:airline_theme = 'base16_solarized'
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts = 1
-
 " solarized (dark) colour scheme
 if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
+    let g:airline_theme = 'base16_solarized'
 else
     colorscheme solarized
 endif
@@ -29,13 +25,10 @@ set sidescrolloff=5
 " highlight the current line
 set cursorline
 
-" allow windows to have a 0 line height
-set winminheight=0
-
 " gui settings
 if has("gui_running")
-    " remove toolbar
-    set guioptions-=T
+    " remove toolbar and scrollbars
+    set guioptions=gm
     " fill screen!
     set lines=40 columns=130
     " Use system clipboard
@@ -48,7 +41,7 @@ if has("gui_running")
     set guifont=MesloLGS\ Nerd\ Font\ Mono:h11
 endif
 
-highlight statusline gui=none
+" highlight statusline gui=none
 
 " show matching brackets/braces
 set showmatch
