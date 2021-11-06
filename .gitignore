@@ -2,5 +2,4 @@
 .netrwhist
 .tmp/
 .undo/
-bundle/
-doc/
+plugged/

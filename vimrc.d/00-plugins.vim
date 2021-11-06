@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/bundle')
+call plug#begin()
 
 " load some sane defaults
 Plug 'tpope/vim-sensible'

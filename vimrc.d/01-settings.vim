@@ -8,7 +8,7 @@ set ttyfast
 set shell=zsh
 
 " have viminfo remember a bunch of stuff
-set viminfo=!,'100,<100,f100,s10,n~/.viminfo
+" set viminfo=!,'100,<100,f100,s10,n~/.viminfo
 
 " hide buffers, don't close them
 set hidden
@@ -40,8 +40,8 @@ set smartcase
 set hlsearch
 
 " backup to a central dir, to avoid clutter in workspace dirs
-set directory=~/.vim/.tmp/
-set backupdir=~/.vim/.backup/
+set directory=~/.config/nvim/.tmp/
+set backupdir=~/.config/nvim/.backup/
 
 " enable modelines
 set modelines=5
